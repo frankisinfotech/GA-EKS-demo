@@ -41,5 +41,5 @@ jobs:
 
       run: |
         docker build -t ${REPO} .
-        docker tag ${REPO}:latest ${REPOSITORY_TAG}
-        docker push ${REPOSITORY_TAG}
+        docker tag ${REPO}:latest ${REGISTRY}/${REPO}:${GITHUB_RUN_NUMBER}
+        docker push ${REGISTRY}/${REPO}:${GITHUB_RUN_NUMBER}
